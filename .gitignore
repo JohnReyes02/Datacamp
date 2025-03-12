@@ -1,14 +1,29 @@
-# Archivos generados por Quarto
-.quarto/
+# Ignorar el directorio de salidas personalizadas
+_outputs/
+
+# Archivos de salida generados por Quarto (opcional si no quieres subirlos)
 *.html
 *.pdf
 *.docx
-*.pptx
-*.ipynb  # Si generas notebooks a partir de Quarto y no quieres subirlos por separado
+*.odt
+*.epub
 
-# Archivos de sistema operativo (opcional, pero generalmente buena idea)
-.DS_Store      # macOS
-Thumbs.db     # Windows
+# Archivos temporales y de caché
+*.log
+*.aux
+*.out
+*.toc
+*.snm
+*.nav
+*.fls
+*.fdb_latexmk
+.cache/
+.quarto/
+.Rproj.user/
+
+# Configuración de IDEs (opcional)
+.vscode/
+.idea/
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,python
