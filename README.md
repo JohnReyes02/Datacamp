@@ -58,11 +58,10 @@ El repositorio está organizado de la siguiente manera:
 
 ## 👨‍💻 Contacto
 
-- **Nombre:** [Edwin John Fredy Reyes Aguirre]
+- **Nombre:** Edwin John Fredy Reyes Aguirre
 - **GitHub:** [JohnReyes02](https://github.com/JohnReyes02)
-- **LinkedIn:** [Tu perfil de LinkedIn](https://www.linkedin.com/in/edwin-reyes-aguirre/)
-- **Correo Electrónico:** [Tu correo electrónico] (Opcional)
-- **Twitter:** [Tu usuario en Twitter](<Enlace a tu cuenta de Twitter>) _Opcional_
+- **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/edwin-reyes-aguirre/)
+
 
 (Incluye _solo_ la información de contacto que quieras compartir públicamente. No es obligatorio incluir tu correo electrónico o redes sociales).
 
