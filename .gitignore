@@ -1,21 +1,10 @@
 # Archivos generados por Quarto
-_quarto/
+.quarto/
 *.html
 *.pdf
 *.docx
 *.pptx
 *.ipynb  # Si generas notebooks a partir de Quarto y no quieres subirlos por separado
-
-# Archivos temporales de Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Entornos virtuales de Python (si usas)
-venv/
-.venv/
-env/
-.env/
 
 # Archivos de sistema operativo (opcional, pero generalmente buena idea)
 .DS_Store      # macOS
