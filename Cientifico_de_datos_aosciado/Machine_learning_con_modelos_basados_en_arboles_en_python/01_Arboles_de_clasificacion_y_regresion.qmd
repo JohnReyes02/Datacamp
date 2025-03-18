@@ -1,0 +1,226 @@
+---
+title: "Árboles de clasificación y regresión"
+author: "Edwin John Fredy Reyes Aguirre"
+date: today
+toc: true
+toc-title: "Contenido"
+---
+
+Los Árboles de clasificación y regresión (CART) son un conjunto de modelos de aprendizaje supervisado que se utilizan para problemas de clasificación y regresión. En este capítulo, conocerás el algoritmo CART.
+
+## Árbol de decisión para la clasificación
+
+-   Árbol de calsificación
+
+    -   Secuencia de preguntas si - no acerca de caracteristicas (features) individuales.
+    -   Objetivo: Inferir las etiquetas.
+    -   Pueden capturar relaciones no lineales entre entidades y etiquetas.
+    -   No requieren que las características estén en la misma escala. (Ej: Estandarización).
+
+-   Dataset Cáncer de mama en 2D
+
+    ![](images/paste-2.png){width="450"}
+
+-   Diagrama de árbol de decisión
+
+    -   El número máximo de ramas que separan la parte superior de un extremo, se conoce como, profundidad máxima
+
+        ![](images/paste-3.png){width="450"}
+
+-   Árbol de clasificación en scikit-learn
+
+```{python}
+# | echo: true
+# | eval: false
+# Importe DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# Importe train_test_split
+from sklearn.model_selection import train_test_split
+
+# Importe accuracy_score
+from sklearn.metrics import accuracy_score
+
+# Divida el dataset en 80% entrenamiento, 20% prueba
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.2,
+                                                    stratify=y,
+                                                    random_state=1)
+
+# Instancie dt
+dt = DecisionTreeClassifier(max_depth=2, random_state=1)
+
+# Fit dt al set de entrenamiento
+dt.fit(X_train, y_train)
+
+# Prediga con el set de prueba las etiquetas
+y_pred = dt.predict(X_test)
+
+# Evalue la exactitud del set de prueba
+accuracy_score(y_test, y_pred)
+```
+
+-   Regiones de Decisión
+
+    Un modelo de clasificación divide el espacio de características en regiones donde todas las instancias en una región se asignan a una sola etiqueta de clase.
+
+    Límites de Decisión: Superficie que separa diferentes regiones de decisión.
+
+    ![](images/paste-4.png){width="450"}
+
+
+### Entrena tu primer árbol de clasificación
+
+En este ejercicio trabajarás con el Conjunto de datos de cáncer de mama de Wisconsin del repositorio de machine learning UCI. Predecirás si un tumor es maligno o benigno basándote en dos características: el radio medio del tumor (`radius_mean`) y su número medio de puntos cóncavos (`concave points_mean`).
+
+El conjunto de datos ya está cargado en tu espacio de trabajo y está dividido en un 80 % de entrenamiento y un 20 % de prueba. Las matrices de características se asignan a X_train y X_test, mientras que las matrices de etiquetas se asignan a y_train y y_test, donde la clase 1 corresponde a un tumor maligno y la clase 0 a un tumor benigno. Para obtener resultados reproducibles, también definimos una variable llamada `SEED` que se fija en 1.
+
+```{python}
+
+import pandas as pd
+
+wbc = pd.read_csv('./data/wbc.csv')
+wbc.head()
+```
+
+```{python}
+# Separamos las columnas que corresponden a X
+X = wbc[['radius_mean', 'concave points_mean']] 
+
+# Separamos la columna con los datos a predecir
+y = wbc['diagnosis']
+y = y.map({'M': 1, 'B': 0})
+
+SEED = 1
+```
+
+```{python}
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.2,
+                                                    stratify=y,
+                                                    random_state=SEED)
+```
+
+#### Instrucciones:
+
+- Importa `DecisionTreeClassifier` desde `sklearn.tree`.
+
+- Instancia un `DecisionTreeClassifier` `dt` de profundidad máxima igual 6.
+
+- Ajusta `dt` al conjunto de entrenamiento.
+
+- Predice las etiquetas del conjunto de pruebas y asigna el resultado a `y_pred`.
+
+```{python}
+# Import DecissionTreeClassifier from sklearn.from sklearn.tree
+from sklearn.tree import DecisionTreeClassifier
+
+# Instantiate a DecisionTreeClassifier 'dt' with a maximum depth of 6
+dt = DecisionTreeClassifier(max_depth=6, random_state=SEED)
+
+# Fit dt to the training set
+dt.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = dt.predict(X_test)
+print(y_pred[0:5])
+```
+
+Se puede ver las primeras cinco predicciones hechas por el árbol ajustado en el conjunto de prueba.
+
+
+### Evaluar el árbol de clasificación
+
+Ahora que has ajustado tu primer árbol de clasificación, es hora de evaluar su rendimiento en el conjunto de pruebas. Lo harás utilizando la métrica de precisión, que corresponde a la fracción de predicciones correctas realizadas en el conjunto de pruebas.
+
+#### Instrucciones
+
+- Importa la función `accuracy_score` de `sklearn.metrics`.
+
+- Predice las etiquetas del conjunto de pruebas y asigna la matriz obtenida a `y_pred`.
+
+- Evalúa la puntuación de precisión del conjunto de pruebas de `dt` llamado `accuracy_score()` y asigna el valor a `acc`.
+
+
+
+```{python}
+# Import accuracy_score
+from sklearn.metrics import accuracy_score
+
+# Predict test set labels
+y_pred = dt.predict(X_test)
+
+# Compute test set accuracy
+acc = accuracy_score(y_test, y_pred)
+print(f'Test set accuracy: {acc:.2f}')
+```
+
+
+### Regresión logística frente a árbol de clasificación
+
+Un árbol de clasificación divide el espacio de características en **regiones rectangulares**. En cambio, un modelo lineal como la regresión logística solo produce un único límite de decisión lineal que divide el espacio de características en dos regiones de decisión.
+
+Hemos escrito una función personalizada llamada `plot_labeled_decision_regions()` que puedes utilizar para trazar las regiones de decisión de una lista que contenga dos clasificadores entrenados. 
+
+
+```{python}
+from mlxtend.plotting import plot_decision_regions
+
+def plot_labeled_decision_regions(X, y, models):
+    '''
+
+    '''
+    if len(models) != 2:
+        raise Exception('''
+        Models should be a list containing only two trained classifiers.
+        ''')
+    if not isinstance(X, pd.DataFrame):
+        raise Exception('''
+        X has to be a pandas DataGrame with two numerical features.
+        ''')
+    if not isinstance(y, pd.Series):
+        raise Exception('''
+        y has to be a pandas Series corresponding to the labels.
+        ''')
+
+    fig, ax = plt.subplots(1, 2, figsize=(6.0, 2.7), sharey=True)
+    for i, model in enumerate(models):
+        plot_decision_regions(X.values, y.values, model, legend= 2, ax = ax[i])
+        ax[i].set_title(model.__class__.__name__)
+        ax[i].set_xlabel(X.columns[0])
+        if i == 0:
+            ax[i].set_ylabel(X.columns[1])
+        ax[i].set_ylim(X.values[:,1].min(), X.values[:,1].max())
+        ax[i].set_xlim(X.values[:,0].min(), X.values[:,0].max())
+    plt.tight_layout()
+    plt.show()
+```
+
+#### Instrucciones:
+
+- Importa `LogisticRegression` desde `sklearn.linear_model`.
+
+- Instancia un modelo `LogisticRegression` y asígnalo a `logreg`
+
+
+
+```{python}
+import matplotlib.pyplot as plt
+
+# Import LogisticRegression from sklearn.linear_model
+from sklearn.linear_model import LogisticRegression
+
+# Instatiate logreg
+logreg = LogisticRegression(random_state=1)
+
+# Fit logreg to the training set
+logreg.fit(X_train, y_train)
+
+# Define a list called clfs containing the two classifiers logreg and dt
+clfs = [logreg, dt]
+
+# Review the decision regions if the two classifiers
+plot_labeled_decision_regions(X_test, y_test, clfs)
+```
