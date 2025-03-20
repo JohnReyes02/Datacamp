@@ -68,7 +68,6 @@ accuracy_score(y_test, y_pred)
 
     ![](images/paste-4.png){width="450"}
 
-
 ### Entrena tu primer árbol de clasificación
 
 En este ejercicio trabajarás con el Conjunto de datos de cáncer de mama de Wisconsin del repositorio de machine learning UCI. Predecirás si un tumor es maligno o benigno basándote en dos características: el radio medio del tumor (`radius_mean`) y su número medio de puntos cóncavos (`concave points_mean`).
@@ -105,13 +104,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,
 
 #### Instrucciones:
 
-- Importa `DecisionTreeClassifier` desde `sklearn.tree`.
+-   Importa `DecisionTreeClassifier` desde `sklearn.tree`.
 
-- Instancia un `DecisionTreeClassifier` `dt` de profundidad máxima igual 6.
+-   Instancia un `DecisionTreeClassifier` `dt` de profundidad máxima igual 6.
 
-- Ajusta `dt` al conjunto de entrenamiento.
+-   Ajusta `dt` al conjunto de entrenamiento.
 
-- Predice las etiquetas del conjunto de pruebas y asigna el resultado a `y_pred`.
+-   Predice las etiquetas del conjunto de pruebas y asigna el resultado a `y_pred`.
 
 ```{python}
 # Import DecissionTreeClassifier from sklearn.from sklearn.tree
@@ -130,20 +129,17 @@ print(y_pred[0:5])
 
 Se puede ver las primeras cinco predicciones hechas por el árbol ajustado en el conjunto de prueba.
 
-
 ### Evaluar el árbol de clasificación
 
 Ahora que has ajustado tu primer árbol de clasificación, es hora de evaluar su rendimiento en el conjunto de pruebas. Lo harás utilizando la métrica de precisión, que corresponde a la fracción de predicciones correctas realizadas en el conjunto de pruebas.
 
 #### Instrucciones
 
-- Importa la función `accuracy_score` de `sklearn.metrics`.
+-   Importa la función `accuracy_score` de `sklearn.metrics`.
 
-- Predice las etiquetas del conjunto de pruebas y asigna la matriz obtenida a `y_pred`.
+-   Predice las etiquetas del conjunto de pruebas y asigna la matriz obtenida a `y_pred`.
 
-- Evalúa la puntuación de precisión del conjunto de pruebas de `dt` llamado `accuracy_score()` y asigna el valor a `acc`.
-
-
+-   Evalúa la puntuación de precisión del conjunto de pruebas de `dt` llamado `accuracy_score()` y asigna el valor a `acc`.
 
 ```{python}
 # Import accuracy_score
@@ -157,13 +153,11 @@ acc = accuracy_score(y_test, y_pred)
 print(f'Test set accuracy: {acc:.2f}')
 ```
 
-
 ### Regresión logística frente a árbol de clasificación
 
 Un árbol de clasificación divide el espacio de características en **regiones rectangulares**. En cambio, un modelo lineal como la regresión logística solo produce un único límite de decisión lineal que divide el espacio de características en dos regiones de decisión.
 
-Hemos escrito una función personalizada llamada `plot_labeled_decision_regions()` que puedes utilizar para trazar las regiones de decisión de una lista que contenga dos clasificadores entrenados. 
-
+Hemos escrito una función personalizada llamada `plot_labeled_decision_regions()` que puedes utilizar para trazar las regiones de decisión de una lista que contenga dos clasificadores entrenados.
 
 ```{python}
 from mlxtend.plotting import plot_decision_regions
@@ -200,11 +194,9 @@ def plot_labeled_decision_regions(X, y, models):
 
 #### Instrucciones:
 
-- Importa `LogisticRegression` desde `sklearn.linear_model`.
+-   Importa `LogisticRegression` desde `sklearn.linear_model`.
 
-- Instancia un modelo `LogisticRegression` y asígnalo a `logreg`
-
-
+-   Instancia un modelo `LogisticRegression` y asígnalo a `logreg`
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -223,4 +215,119 @@ clfs = [logreg, dt]
 
 # Review the decision regions if the two classifiers
 plot_labeled_decision_regions(X_test, y_test, clfs)
+plt.show()
 ```
+
+### Aprendizaje del árbol de clasificación
+
+-   Construyendo los bloques de un árbol de decisión
+
+    -   Árboles de decisión: Estructura de datos que consiste de una jerarquía de nodos.
+
+    -   Nodo: Punto que implica una pregunta o una predicción.
+
+    -   Hay tres clases de nodos:
+
+        -   **Root**: Es el nodo en el que el árbol de decisiones empieza a crecer. No tiene nodo padre, involucra una pregunta que da lugar a dos nodos hijos a través de dos ramas.
+
+        -   **Internal node**: Es un nodo que tiene un nodo padre. También implica una pregunta que da lugar a 2 nodos hijos
+
+        -   **Leaf**: Tiene un nodo padre y no tiene hijos. Tiene un nodo principal y no implica preguntas. Es donde se hace la predicción.
+
+- Ganancia de Información (IG)
+
+    ![](images/paste-5.png){width="500"}
+
+    $$ IG(\underbrace{f}_{\text{feature}}, \underbrace{sp}_{\text{split-point}} ) = I(\text{parent}) - \big( \frac{N_{\text{left}}}{N}I(\text{left}) + \frac{N_{\text{right}}}{N}I(\text{right})  \big) $$
+
+    -   Criterios para medir la impureza de un nodo
+
+        - Índice de gini
+        - entropía
+    
+- Aprendizaje de un árbol de clasificación
+    - Los nodos crecen recursivamente.
+    - En cada nodo, la división de los datos se basa en:
+        - Caracterísitca $f$ y el punto de división $sp$ para maximizar $IG(\text{node})$.
+
+    - Si $IG(\text{node}) = 0$, el nodo se declara como hoja.
+
+
+### Hacer crecer un árbol de clasificación
+
+Cuál de las siguientes no es una regla de crecimiento de un árbol de calsificación sin restricciones?
+
+**Respuestas Posibles**
+
+- [ ] La existencia de un nodo depende del estado de sus predecesores.
+- [ ] La impureza de un nodo puede determinarse utilizando distintos criterios, como la entropía y el índice de Gini.
+- [ ] Cuando la ganancia de información resultante de dividir un nodo es nula, el nodo se declara hoja.
+- [x] Cuando se divide un nodo interno, la división se realiza de forma que se minimice la gannacia de información.
+
+
+### Utilizar la entropía como criterio
+
+En este ejercicio, entrenarás un árbol de clasifiacación en el conjunto de datos Cáncer de Mama de Wisconsin utilizando la entropia como criterio de información. Lo harás utilizando las 30 características del conjunto de datos, que se divide en un 80% de entrenamiento y un 20 % de prueba.
+
+#### Instrucciones:
+
+- Importa `DecisionTreeClassifier` desde `sklearn.tree`.
+- Instancia un `DecisionTreeClassifier` `dt_entropy` con una profundidad máxima de 8.
+- Establece el criterio de información en `entropy`.
+- Ajusta `dt_entropy` en el conjunto de entrenamiento.
+
+
+```{python}
+
+# Import DesicionTreeClassifier from sklearn.ree
+from sklearn.tree import DecisionTreeClassifier
+
+# Instatntiate dt_entropy, set 'entropy' as the information criterion
+dt_entropy = DecisionTreeClassifier(max_depth=8, criterion='entropy', random_state=1)
+
+# Fit dt_entropy to the training set
+dt_entropy.fit(X_train, y_train)
+```
+
+### Entropía vs índice de Gini
+
+En este ejercicio compararás la precisión del conjunto de pruebas de `dt_entropy` con la precisión de otro árbol llamado `dt_gini`. El árbol `dt_gini` se entrenón en el mismo conjunto de datos utilizando los mismos parámetros, excepto el criterio de información, que se fijo en el índice de Gini utilizando la palabra clave `gini`
+
+```{python}
+dt_gini = DecisionTreeClassifier(max_depth=8, criterion='gini', random_state=1)
+dt_gini.fit(X_train, y_train)
+```
+
+#### Instrucciones:
+
+- Importa `accuracy_score` desde `sklearn.metrics`.
+- Predice las etiquetas del conjunto de prueba de `dt_entropy` y asigna el resultado a `y_pred`.
+- Evalúa la precisión del conjunto de pruebas de `dt_entropy` y asigna el resultado a `accuracy_entropy`.
+- Revisa `accuracy_entropy` y `accuracy_gini`.
+
+
+
+```{python}
+
+# Import accuracy_score form sklearn.metrics
+from sklearn.metrics import accuracy_score
+
+# Use dt_entropy to predict test set labels
+y_pred = dt_entropy.predict(X_test)
+y_pred_gini = dt_gini.predict(X_test)
+
+
+# Evaluate accuracy_entropy
+accuracy_entropy = accuracy_score(y_test, y_pred)
+accuracy_gini = accuracy_score(y_test, y_pred_gini)
+
+# Print accuracy_entropy
+print(f'Accuracy achieved by using entropy: {accuracy_entropy:.3f}')
+
+# Print accuracy_gini
+print(f'Accuracy achieved by using gini: {accuracy_gini:.3f}')
+```
+
+Los dos modelos logran casi la misma precisión. La mayoría de las veces, el índice de gini y la entropía llevan a los mismos resultados. El índice de gini es ligeramente más rápido de calcular y es el criterio predeterminado utilizado en el modelo `DecisionTreeClassifier` de scikit-learn.
+
+
