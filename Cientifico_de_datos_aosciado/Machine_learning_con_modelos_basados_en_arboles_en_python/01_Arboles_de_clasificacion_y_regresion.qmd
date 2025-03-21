@@ -218,7 +218,7 @@ plot_labeled_decision_regions(X_test, y_test, clfs)
 plt.show()
 ```
 
-### Aprendizaje del árbol de clasificación
+## Aprendizaje del árbol de clasificación
 
 -   Construyendo los bloques de un árbol de decisión
 
@@ -234,7 +234,7 @@ plt.show()
 
         -   **Leaf**: Tiene un nodo padre y no tiene hijos. Tiene un nodo principal y no implica preguntas. Es donde se hace la predicción.
 
-- Ganancia de Información (IG)
+-   Ganancia de Información (IG)
 
     ![](images/paste-5.png){width="500"}
 
@@ -242,16 +242,15 @@ plt.show()
 
     -   Criterios para medir la impureza de un nodo
 
-        - Índice de gini
-        - entropía
-    
-- Aprendizaje de un árbol de clasificación
-    - Los nodos crecen recursivamente.
-    - En cada nodo, la división de los datos se basa en:
-        - Caracterísitca $f$ y el punto de división $sp$ para maximizar $IG(\text{node})$.
+        -   Índice de gini
+        -   entropía
 
-    - Si $IG(\text{node}) = 0$, el nodo se declara como hoja.
+-   Aprendizaje de un árbol de clasificación
 
+    -   Los nodos crecen recursivamente.
+    -   En cada nodo, la división de los datos se basa en:
+        -   Caracterísitca $f$ y el punto de división $sp$ para maximizar $IG(\text{node})$.
+    -   Si $IG(\text{node}) = 0$, el nodo se declara como hoja.
 
 ### Hacer crecer un árbol de clasificación
 
@@ -259,11 +258,10 @@ Cuál de las siguientes no es una regla de crecimiento de un árbol de calsifica
 
 **Respuestas Posibles**
 
-- [ ] La existencia de un nodo depende del estado de sus predecesores.
-- [ ] La impureza de un nodo puede determinarse utilizando distintos criterios, como la entropía y el índice de Gini.
-- [ ] Cuando la ganancia de información resultante de dividir un nodo es nula, el nodo se declara hoja.
-- [x] Cuando se divide un nodo interno, la división se realiza de forma que se minimice la gannacia de información.
-
+-   [ ] La existencia de un nodo depende del estado de sus predecesores.
+-   [ ] La impureza de un nodo puede determinarse utilizando distintos criterios, como la entropía y el índice de Gini.
+-   [ ] Cuando la ganancia de información resultante de dividir un nodo es nula, el nodo se declara hoja.
+-   [x] Cuando se divide un nodo interno, la división se realiza de forma que se minimice la gannacia de información.
 
 ### Utilizar la entropía como criterio
 
@@ -271,11 +269,10 @@ En este ejercicio, entrenarás un árbol de clasifiacación en el conjunto de da
 
 #### Instrucciones:
 
-- Importa `DecisionTreeClassifier` desde `sklearn.tree`.
-- Instancia un `DecisionTreeClassifier` `dt_entropy` con una profundidad máxima de 8.
-- Establece el criterio de información en `entropy`.
-- Ajusta `dt_entropy` en el conjunto de entrenamiento.
-
+-   Importa `DecisionTreeClassifier` desde `sklearn.tree`.
+-   Instancia un `DecisionTreeClassifier` `dt_entropy` con una profundidad máxima de 8.
+-   Establece el criterio de información en `entropy`.
+-   Ajusta `dt_entropy` en el conjunto de entrenamiento.
 
 ```{python}
 
@@ -300,12 +297,10 @@ dt_gini.fit(X_train, y_train)
 
 #### Instrucciones:
 
-- Importa `accuracy_score` desde `sklearn.metrics`.
-- Predice las etiquetas del conjunto de prueba de `dt_entropy` y asigna el resultado a `y_pred`.
-- Evalúa la precisión del conjunto de pruebas de `dt_entropy` y asigna el resultado a `accuracy_entropy`.
-- Revisa `accuracy_entropy` y `accuracy_gini`.
-
-
+-   Importa `accuracy_score` desde `sklearn.metrics`.
+-   Predice las etiquetas del conjunto de prueba de `dt_entropy` y asigna el resultado a `y_pred`.
+-   Evalúa la precisión del conjunto de pruebas de `dt_entropy` y asigna el resultado a `accuracy_entropy`.
+-   Revisa `accuracy_entropy` y `accuracy_gini`.
 
 ```{python}
 
@@ -330,4 +325,52 @@ print(f'Accuracy achieved by using gini: {accuracy_gini:.3f}')
 
 Los dos modelos logran casi la misma precisión. La mayoría de las veces, el índice de gini y la entropía llevan a los mismos resultados. El índice de gini es ligeramente más rápido de calcular y es el criterio predeterminado utilizado en el modelo `DecisionTreeClassifier` de scikit-learn.
 
+## Árbol de decisión para la regresión
 
+-   Árbol de regresión en scikit-learn
+
+```{python}
+# | echo: true
+# | eval: false
+# Import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
+
+# Import train_test_split
+from sklearn.model_selection import train_test_split
+
+# Import mean_squared_error as MSE
+from sklearn.metrics import mean_squared_error as MSE
+
+# Split data into 80% train and 20% test
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.2,
+                                                    random_state=3)
+
+# Instantiate a DecisionTreeRegressor 'dt'
+dt = DecisionTreeRegressor(max_depth=4,
+                           min_samples_leaf=0.1,
+                           random_state=3)  # dato de parada con 10% datos por hoja
+
+# Fit 'dt' to the training-set
+dt.fit(X_train, y_train)
+
+# Predict test-set labels
+y_pred = dt.predict(X_test)
+
+# Compute test-set MSE
+mse_dt = MSE(y_test, y_pred)
+
+# Compute test_set RMSE
+rmse_dt = mse_dt ** (1 / 2)
+
+# Print rmse_dt
+print(rmse_dt)
+```
+
+-   Criterio de información para el Árbol de Regresión $$ I(\text{node}) = \underbrace{\text{MSE}(\text{node})}_{\text{mean-squared-error}} = \dfrac{1}{N_{\text{node}}} \sum_{i \in \text{node}} \big(y^{(i)} - \hat{y}_{\text{node}}  \big)^2 $$ $$ \underbrace{\hat{y}_{\text{node}}}_{\text{mean-target-value}} = \dfrac{1}{N_{\text{node}}} \sum_{i \in \text{node}}y^{(i)}$$
+
+-   Prediction $$ \hat{y}_{\text{pred}}(\text{leaf}) = \dfrac{1}{N_{\text{leaf}}} \sum_{i \in \text{leaf}} y^{(i)}$$
+
+-   Regresión lineal vs Árbol de regresión
+
+    ![](images/paste-6.png){width="590"}
