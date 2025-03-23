@@ -374,3 +374,53 @@ print(rmse_dt)
 -   Regresión lineal vs Árbol de regresión
 
     ![](images/paste-6.png){width="590"}
+
+
+### Entrena tu primer árbol de regresión 
+
+En este ejercicio, entrenarás un árbol de regresión para predecir el consumo de `mpg` (millas por galón) de los coches del conjunto de datos auto-mpg utilizando las seis características disponibles.
+
+
+Leemos el dataset:
+```{python}
+auto = pd.read_csv('./data/auto.csv')
+auto.head()
+```
+
+Se realiza una conversión de variables
+```{python}
+auto = pd.get_dummies(auto)
+auto.head()
+```
+
+```{python}
+columnas_bool = ['origin_Asia', 'origin_Europe', 'origin_US']
+auto[columnas_bool] = auto[columnas_bool].astype(int)
+auto
+```
+
+```{python}
+X = auto.drop('mpg', axis='columns')
+y = auto['mpg']
+```
+
+```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3)
+```
+
+#### Instrucciones
+
+- Importa `DecisionTreeRegressor` desde `sklearn.tree`.
+- Instancia un `DecisionTreeRegressor` `dt` con profundidad máxima 8 y `min_samples_leaf` fijado en 0.13.
+- Ajusta `dt` al conjunto de entrenamiento
+
+
+```{python}
+# Import DecisionTreeRegressor from sklearn.tree
+ from sklearn.tree import DecisionTreeRegressor
+
+ # Instantiate dt
+ dt = DecisionTreeRegressor(max_depth=8, min_samples_leaf=0.13, random_state=3)
+
+ # 
+```
