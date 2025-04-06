@@ -389,15 +389,10 @@ auto.head()
 
 Se realiza una conversión de variables
 ```{python}
-auto = pd.get_dummies(auto)
+auto = pd.get_dummies(auto, dtype=int) # columnas categoricas a numericas
 auto.head()
 ```
 
-```{python}
-columnas_bool = ['origin_Asia', 'origin_Europe', 'origin_US']
-auto[columnas_bool] = auto[columnas_bool].astype(int)
-auto
-```
 
 ```{python}
 X = auto.drop('mpg', axis='columns')
@@ -405,6 +400,7 @@ y = auto['mpg']
 ```
 
 ```{python}
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3)
 ```
 
@@ -417,10 +413,80 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ```{python}
 # Import DecisionTreeRegressor from sklearn.tree
- from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
 
- # Instantiate dt
- dt = DecisionTreeRegressor(max_depth=8, min_samples_leaf=0.13, random_state=3)
+# Instantiate dt
+dt = DecisionTreeRegressor(max_depth=8, min_samples_leaf=0.13, random_state=3)
 
- # 
+# Fit dt to the training set
+dt.fit(X_train, y_train)
+```
+
+### Evaluar el árbol de regresión
+
+En este ejercicio, evaluarás el rendimiento del conjunto de pruebas de `dt` utilizando la métrica Error cuadrático medio (RMSE). La RMSE de un modelo mide, por término medio, cuánto difieren las predicciones del modelo de las etiquetas reales. El RMSE de un modelo puede obtenerse calculando la raíz cuadrada del Error Cuadrático Medio del modelo (MSE).
+
+#### Instrucciones:
+
+- Importa la función `mean_squared_error` como `MSE` desde `sklearn.metrics`.
+- Predice las etiquetas del conjunto de pruebas y asigna la salida a `y_pred`.
+- Calcula el conjunto de pruebas MSE llamando a `MSE` y asigna el resultado a `mse_dt`.
+- Calcula el conjunto de prueba RMSE y asígnalo a `rmse_dt`  
+
+```{python}
+
+# Import mean_squared_error from sklearn.metrics as MSE
+from sklearn.metrics import mean_squared_error as MSE
+
+# Compute y_pred
+y_pred = dt.predict(X_test)
+
+# Compute mse_dt
+mse_dt = MSE(y_test, y_pred)
+
+# Compute rmse_dt
+rmse_dt = (mse_dt) ** (1 / 2)
+
+# Print rmse_dt
+print(f'Test set RMSE of dt: {rmse_dt:.2f}')
+```
+
+### Regresión lineal vs árbol de regresión
+
+En este ejercicio, compararás el conjunto de pruebas RMSE de `dt` con el obtenido por un modelo de regresión lineal. Ya hemos instanciado un modelo de regresión lineal `lr` y lo hemos entrenado con el mismo conjunto de datos que `dt`
+
+Preprocesamiento:
+
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression()
+
+lr.fit(X_train, y_train)
+```
+
+#### Instrucciones
+
+- Predice las etiquetas del conjunto de pruebas utilizando el modelo de regresion lineal (`lr`) y asigna el resulta a `y_pred_lr`.
+- Calcula el conjunto de pruebas MSE y asigna el resultado a `mse_lr`.
+- Calcula el conjunto de prueba RMSE y asigna el resultado a `rmse_lr`
+
+
+```{python}
+
+# Predict test set labels
+y_pred_lr = lr.predict(X_test)
+
+# Compute mse_lr
+mse_lr = MSE(y_pred_lr, y_test)
+
+# Compute rmse_lr
+rmse_lr = mse_lr ** (1/2)
+
+# print rmse_lr
+print(f'Linear Regression test set RMSE: {rmse_lr:.2f}')
+
+# print rmse_dt
+print(f'Regression Tree test set RMSE: {rmse_dt:.2f}')
 ```
