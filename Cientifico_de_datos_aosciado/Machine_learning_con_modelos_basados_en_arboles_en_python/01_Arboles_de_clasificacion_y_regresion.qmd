@@ -490,3 +490,9 @@ print(f'Linear Regression test set RMSE: {rmse_lr:.2f}')
 # print rmse_dt
 print(f'Regression Tree test set RMSE: {rmse_dt:.2f}')
 ```
+
+
+```{python}
+import sys
+print(sys.prefix)
+```
