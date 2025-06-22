@@ -24,11 +24,9 @@ book:
     - index.qmd
     - part: Capitulos
       chapters: 
-        - intro.qmd
-        - summary.qmd
-        - references.qmd
-
-bibliography: references.bib
+        - 01_Introduccion_a_python.qmd
+        - 02_Trabajar_con_tipos_de_datos.qmd
+        - 03_Flujo_de_control_y_bucles.qmd
 
 format:
   html:

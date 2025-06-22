@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – Introducción a Python para desarrolladores</title>
+<title>Introducción a Python – Introducción a Python para desarrolladores</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,7 +64,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./02_Trabajar_con_tipos_de_datos.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Capitulos</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Introduccion_a_python.html">Capitulos</a></li><li class="breadcrumb-item"><a href="./01_Introduccion_a_python.html"><span class="chapter-title">Introducción a Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,7 +172,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Bienvenida</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -172,18 +186,17 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introduction</span></a>
+  <a href="./01_Introduccion_a_python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary</span></a>
+  <a href="./02_Trabajar_con_tipos_de_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Trabajar con tipos de datos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./03_Flujo_de_control_y_bucles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Flujo de control y bucles</span></a>
   </div>
 </li>
       </ul>
@@ -193,15 +206,30 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#qué-es-python" id="toc-qué-es-python" class="nav-link active" data-scroll-target="#qué-es-python">¿Qué es Python?</a>
+  <ul class="collapse">
+  <li><a href="#ejecutar-tu-primer-script-de-python" id="toc-ejecutar-tu-primer-script-de-python" class="nav-link" data-scroll-target="#ejecutar-tu-primer-script-de-python">Ejecutar tu primer script de python</a></li>
+  <li><a href="#escribir-tu-primer-script-en-python" id="toc-escribir-tu-primer-script-en-python" class="nav-link" data-scroll-target="#escribir-tu-primer-script-en-python">Escribir tu primer script en Python</a></li>
+  </ul></li>
+  <li><a href="#sintásis-de-python" id="toc-sintásis-de-python" class="nav-link" data-scroll-target="#sintásis-de-python">Sintásis de Python</a>
+  <ul class="collapse">
+  <li><a href="#python-como-calculadora" id="toc-python-como-calculadora" class="nav-link" data-scroll-target="#python-como-calculadora">Python como calculadora</a></li>
+  <li><a href="#más-cálculos" id="toc-más-cálculos" class="nav-link" data-scroll-target="#más-cálculos">Más cálculos</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/JohnReyes02/Datacamp/edit/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/blob/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Capitulos</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-title">Introduction</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Introduccion_a_python.html">Capitulos</a></li><li class="breadcrumb-item"><a href="./01_Introduccion_a_python.html"><span class="chapter-title">Introducción a Python</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-title">Introducción a Python</span></h1>
 </div>
 
 
@@ -218,15 +246,124 @@ div.csl-indent {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+<p>Descubre las maravillas de Python: por qué es popular y cómo utilizarlo. ¡No se requieren conocimientos previos!</p>
+<section id="qué-es-python" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-python">¿Qué es Python?</h2>
+<ul>
+<li><p>Python es un lenguaje de programación de propósito general utilizado para crear casi cualquier sofware.</p></li>
+<li><p>La sintaxis de alto nivel de Python se parece al lenguaje natural.</p></li>
+<li><p>Python tiene paquetes de software disponibles públicamente, que son códigos escritos por otros desarrolladores que podemos utilizar en lugar de escribir una función desde cero.</p></li>
+<li><p>Es gratuito y de código abierto, lo que significa que cualquiera puede usarlo, modificarlo y distribuirlo como crea conveniente.</p></li>
+<li><p>Los usos más comunes de Python incluyen:</p>
+<ul>
+<li>Automatización</li>
+<li>Desarrollo Web</li>
+<li>Tareas de IA</li>
+<li>Informes</li>
+<li>Web Scraping</li>
+<li>Reconocimiento de Imagen</li>
+</ul></li>
+</ul>
+<section id="ejecutar-tu-primer-script-de-python" class="level3">
+<h3 class="anchored" data-anchor-id="ejecutar-tu-primer-script-de-python">Ejecutar tu primer script de python</h3>
+<p>En este ejercicio ejecutarás tu primer código en Python.</p>
+<section id="instrucciones" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones">Instrucciones</h4>
+<ul>
+<li><p>Pulsa el botón <strong>Ejecutar código</strong> para ejecutar el script de Python y ver los resultados en el área del shell de Python.</p></li>
+<li><p>Pulsa el botón <strong>Enviar respuesta</strong> para pasar al siguiente ejecticio.</p></li>
+</ul>
+<div id="1136c708" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'I Love Python'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I Love Python</code></pre>
 </div>
 </div>
+<p>Acabas de ejecutar tu primer código en Python. Esto es solo el comienzo; pronto estarás escribiendo programas en Python más complejos y potentes.</p>
+</section>
+</section>
+<section id="escribir-tu-primer-script-en-python" class="level3">
+<h3 class="anchored" data-anchor-id="escribir-tu-primer-script-en-python">Escribir tu primer script en Python</h3>
+<p>Ahora, escribirás tu primer línea de código Python.</p>
+<p>La función <code>print()</code> de Python muestra mensajes y resultados de código en el intérprete de comandos.</p>
+<section id="instrucciones-1" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-1">Instrucciones</h4>
+<ul>
+<li>Utiliza la función incorporada de Python <code>print()</code> para mostrar <code>"Learning Python"</code>.</li>
+</ul>
+<div id="3b0c8ef2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace ____ below to display "Learning Python"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Learning Python'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Learning Python</code></pre>
+</div>
+</div>
+<p>Haz impreso corectamente ‘Learning Python’, usando la función <code>print()</code> dentre del shell de Python. La función <code>print()</code> asegura que siempre mostrarás mensajes en el shell de Python.</p>
+</section>
+</section>
+</section>
+<section id="sintásis-de-python" class="level2">
+<h2 class="anchored" data-anchor-id="sintásis-de-python">Sintásis de Python</h2>
+<ul>
+<li>Principales operadores
+<ul>
+<li>Suma: +</li>
+<li>Resta: -</li>
+<li>Multiplicación *</li>
+<li>División: /</li>
+<li>Módulo: %</li>
+</ul></li>
+<li>Los comentarios en el código se escriben iniciando con un <code>#</code></li>
+</ul>
+<section id="python-como-calculadora" class="level3">
+<h3 class="anchored" data-anchor-id="python-como-calculadora">Python como calculadora</h3>
+<p>Trabajar con números y realizar cálculos son tareas de programación muy comunes. En este ejercicio, debes realizar dos cálculos.</p>
+<section id="instrucciones-2" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-2">Instrucciones</h4>
+<ul>
+<li><p>Imprime la suma de <code>19 + 17</code>.</p></li>
+<li><p>Imprime el resultado de restar <code>12</code> a <code>99</code>.</p></li>
+</ul>
+<div id="b163ada4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add 19 and 17</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">19</span> <span class="op">+</span> <span class="dv">17</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtract 12 from 99</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">99</span> <span class="op">-</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>36
+87</code></pre>
+</div>
+</div>
+<p>Python puede ayudarte a hacer sumas y restas básicas, una habilidad que será útil para una variedad de tareas al construir software.</p>
+</section>
+</section>
+<section id="más-cálculos" class="level3">
+<h3 class="anchored" data-anchor-id="más-cálculos">Más cálculos</h3>
+<p>Python puede realizar cálculos más complejos, como multiplicaciones y divisiones. Ahora, realizarás estos cálculos e imprimirás sus resultados.</p>
+<section id="instrucciones-3" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-3">Instrucciones</h4>
+<ul>
+<li><p>Imprime el resultado de <code>9</code> multiplicado por <code>2</code>.</p></li>
+<li><p>Imprime el resultado de dividir <code>120</code> enre <code>12</code>.</p></li>
+</ul>
+<div id="f80afa21" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and print 9 multiplied by 2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">9</span> <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result of dividing 120 by 12</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">120</span> <span class="op">/</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>18
+10.0</code></pre>
+</div>
+</div>
+<p>Hasta ahora has trabajado con números y aprendido lo básico de la multiplicación y la división.¡Vamos a descubrir otros números que no son enteros en el próximo video!</p>
+
+
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -731,13 +868,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Bienvenida">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bienvenida</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_Trabajar_con_tipos_de_datos.html" class="pagination-link" aria-label="Trabajar con tipos de datos">
+        <span class="nav-page-text"><span class="chapter-title">Trabajar con tipos de datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -746,4 +883,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/JohnReyes02/Datacamp/edit/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/blob/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/JohnReyes02/Datacamp/edit/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/blob/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
