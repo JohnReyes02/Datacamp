@@ -105,5 +105,38 @@
       "Capitulos",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción a Python</span>"
     ]
+  },
+  {
+    "objectID": "01_Introduccion_a_python.html#variables",
+    "href": "01_Introduccion_a_python.html#variables",
+    "title": "Introducción a Python",
+    "section": "Variables",
+    "text": "Variables\n\nEn Python los números enteros se clasifican como enteros.\nLos números decimales se clasifican como flotantes.\nPython no requiere que especifiquemos el tipo de datos de una variable.\nLa función type() permite verificar qué tipo de datos es una variable.\n\n\ncustomer_age = 26\naccount_balance = 58.50\n\n# Print Data Type\nprint(type(customer_age))\nprint(type(account_balance))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n\n\n\nUn dato booleano solo puede tener dos valores posible:\n\nVerdadero\nFalso\n\n\n\nis_active_costumer = True\nprint(type(is_active_costumer))\n\n&lt;class 'bool'&gt;\n\n\n\nTrabajar con variables numéricas\nPython te permite establecer variables como números enteros o números con decimales. En este ejercicio, probarás a utilizar distintos valores numéricos para las variables.\n\nInstrucciones\n\nCrea una variable llamada account_balance con el valor 120.50.\nImprime la variable account_balance.\n\n\n# Age of a costumer\ncostumer_age = 27\n\n# Create account_balance variable\naccount_balance = 120.5\n\n# Print account_balance\nprint(account_balance)\n\n120.5\n\n\nEn el próximo ejercicio, aprenderás sobre la reutilización de variables y también aprenderás más sobre tipos de datos.\n\n\n\nActualizar los valores de las variables\nLas variables pueden actualizarse para que posean nuevos valores en cualquier momento, para que puedas reutilizarlas eficazmente. Los valores booleanos solo pueden ser True o False, similar a Sí/No.\n¡Al cliente le ha tocado la lotería! Actualiza las variables account_balance e is_millionaire para que reflejen su nuevo estado.\n\nInstrucciones\n\nActualiza el account_balance para que sea 1300000.00.\nActualiza la variable is_millionaire para que sea True.\nImprime la variable is_millionaire para ver su valor booleano actualizado.\n\n\naccount_balance = 20000.00\nis_millionaire = False\n\n# Update acoount balance\naccount_balance = 1300000.00\n# Update is_millionaire variable\nis_millionaire = True\n\nprint(account_balance)\nprint(is_millionaire)\n\n1300000.0\nTrue\n\n\nAhora has aprendido a actualizar variables, trabajar con valores booleanos y has trabajado con algunos tipos de datos. En el siguiente paso, aprenderás a determinar internamente el tipo de datos de cada variable según lo establecido por Python.\n\n\n\nComprobación de los tipos de datos\nPython nos facilita la vida al inferir el tipo de dato de las variables con las que trabajas, evitando la necesidad de declarar el tipo de datos explícitamente.\nPractiquemos la comprobación del tipo de datos de distintos valores y variables. Tienes tres variables: customer_age, account_balance e is_millionaire, y aprenderás a obtener sus tipos de datos.\n\nInstrucciones\n\nImprime el tipo de datos de la variable costumer_age.\n\n\ncostumer_age = 29\n\n# Print the data type of costumer_age\nprint(type(costumer_age))\n\n&lt;class 'int'&gt;\n\n\n\nImprime el tipo de datos de la variable account_balance.\n\n\ncustomer_age = 49\naccount_balance = 120078.89\n\n# Print the data type of account_balance\nprint(type(account_balance))\n\n&lt;class 'float'&gt;\n\n\n\nImprime el tipo de datos de la variable is_millionaire.\n\n\ncustomer_age = 49\naccount_balance = 120078.89\nis_millionaire = False\n\n# Print the data type of is_millionaire\nprint(type(is_millionaire))\n\n&lt;class 'bool'&gt;\n\n\nAprenderemos a lo largo del curso que ciertas tareas son posibles dependiendo de los tipos de datos con los que estamos trabajando, como cálculos o filtrado condicional, por lo que conocer el tipo de datos con los que estamos trabajando es extremadamente importante.",
+    "crumbs": [
+      "Capitulos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción a Python</span>"
+    ]
+  },
+  {
+    "objectID": "02_Trabajar_con_tipos_de_datos.html",
+    "href": "02_Trabajar_con_tipos_de_datos.html",
+    "title": "Trabajar con tipos de datos",
+    "section": "",
+    "text": "Trabajar con cadenas\nAprende cómo y cuándo utilizar las estructuras de datos integradas en Python, como listas, diccionarios, conjuntos y tuplas.",
+    "crumbs": [
+      "Capitulos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trabajar con tipos de datos</span>"
+    ]
+  },
+  {
+    "objectID": "02_Trabajar_con_tipos_de_datos.html#trabajar-con-cadenas",
+    "href": "02_Trabajar_con_tipos_de_datos.html#trabajar-con-cadenas",
+    "title": "Trabajar con tipos de datos",
+    "section": "",
+    "text": "Las cadenas de caracteres estan en todas partes\n\nLas cadenas de caracteres se utilizan para:\n\nPerfiles de usuarios\nMotores de búsqueda\nModelos grandes de lenguaje",
+    "crumbs": [
+      "Capitulos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trabajar con tipos de datos</span>"
+    ]
   }
 ]

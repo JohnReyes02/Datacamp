@@ -110,3 +110,130 @@ print(120 / 12)
 ```
 
 Hasta ahora has trabajado con números y aprendido lo básico de la multiplicación y la división.¡Vamos a descubrir otros números que no son enteros en el próximo video!
+
+
+## Variables
+
+- En Python los números enteros se clasifican como enteros.
+
+- Los números decimales se clasifican como flotantes.
+
+- Python no requiere que especifiquemos el tipo de datos de una variable.
+
+- La función `type()` permite verificar qué tipo de datos es una variable.
+
+
+```{python}
+customer_age = 26
+account_balance = 58.50
+
+# Print Data Type
+print(type(customer_age))
+print(type(account_balance))
+```
+
+- Un dato booleano solo puede tener dos valores posible:
+    - Verdadero 
+    - Falso
+
+
+```{python}
+is_active_costumer = True
+print(type(is_active_costumer))
+```
+
+### Trabajar con variables numéricas
+
+Python te permite establecer variables como números enteros o números con decimales. En este ejercicio, probarás a utilizar distintos valores numéricos para las variables.
+
+#### Instrucciones
+
+- Crea una variable llamada `account_balance` con el valor `120.50`.
+
+- Imprime la variable `account_balance`.
+
+
+```{python}
+# Age of a costumer
+costumer_age = 27
+
+# Create account_balance variable
+account_balance = 120.5
+
+# Print account_balance
+print(account_balance)
+```
+
+En el próximo ejercicio, aprenderás sobre la reutilización de variables y también aprenderás más sobre tipos de datos.
+
+### Actualizar los valores de las variables
+
+Las variables  pueden actualizarse para que posean nuevos valores en cualquier momento, para que puedas reutilizarlas eficazmente. Los valores booleanos solo pueden ser `True` o `False`, similar a **Sí/No**.
+
+¡Al cliente le ha tocado la lotería! Actualiza las variables `account_balance` e `is_millionaire` para que reflejen su nuevo estado.
+
+#### Instrucciones
+
+- Actualiza el `account_balance` para que sea `1300000.00`.
+
+- Actualiza la variable `is_millionaire` para que sea `True`.
+
+- Imprime la variable `is_millionaire` para ver su valor booleano actualizado.
+
+
+```{python}
+account_balance = 20000.00
+is_millionaire = False
+
+# Update acoount balance
+account_balance = 1300000.00
+# Update is_millionaire variable
+is_millionaire = True
+
+print(account_balance)
+print(is_millionaire)
+```
+
+Ahora has aprendido a actualizar variables, trabajar con valores booleanos y has trabajado con algunos tipos de datos. En el siguiente paso, aprenderás a determinar internamente el tipo de datos de cada variable según lo establecido por Python.
+
+### Comprobación de los tipos de datos
+
+Python nos facilita la vida al inferir el tipo de dato de las variables con las que trabajas, evitando la necesidad de declarar el tipo de datos explícitamente.
+
+Practiquemos la comprobación del tipo de datos de distintos valores y variables. Tienes tres variables: `customer_age`, `account_balance` e `is_millionaire`, y aprenderás a obtener sus tipos de datos.
+
+#### Instrucciones
+
+1. Imprime el tipo de datos de la variable `costumer_age`.
+
+```{python}
+costumer_age = 29
+
+# Print the data type of costumer_age
+print(type(costumer_age))
+```
+
+2. Imprime el tipo de datos de la variable `account_balance`.
+
+
+```{python}
+customer_age = 49
+account_balance = 120078.89
+
+# Print the data type of account_balance
+print(type(account_balance))
+```
+
+3. Imprime el tipo de datos de la variable `is_millionaire`.
+
+
+```{python}
+customer_age = 49
+account_balance = 120078.89
+is_millionaire = False
+
+# Print the data type of is_millionaire
+print(type(is_millionaire))
+```
+
+Aprenderemos a lo largo del curso que ciertas tareas son posibles dependiendo de los tipos de datos con los que estamos trabajando, como cálculos o filtrado condicional, por lo que conocer el tipo de datos con los que estamos trabajando es extremadamente importante.

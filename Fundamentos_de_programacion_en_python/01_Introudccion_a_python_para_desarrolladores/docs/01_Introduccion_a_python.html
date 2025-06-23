@@ -75,8 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ede4997d1aa2d49dd7dff0ee71c8d46e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4909038f391676d0e746676f7305d10d.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b17230bfe5c1c1a17e6bd600670c5145.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-20d87d490373df57c880857ccdca8cc5.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -221,6 +221,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#python-como-calculadora" id="toc-python-como-calculadora" class="nav-link" data-scroll-target="#python-como-calculadora">Python como calculadora</a></li>
   <li><a href="#más-cálculos" id="toc-más-cálculos" class="nav-link" data-scroll-target="#más-cálculos">Más cálculos</a></li>
   </ul></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a>
+  <ul class="collapse">
+  <li><a href="#trabajar-con-variables-numéricas" id="toc-trabajar-con-variables-numéricas" class="nav-link" data-scroll-target="#trabajar-con-variables-numéricas">Trabajar con variables numéricas</a></li>
+  <li><a href="#actualizar-los-valores-de-las-variables" id="toc-actualizar-los-valores-de-las-variables" class="nav-link" data-scroll-target="#actualizar-los-valores-de-las-variables">Actualizar los valores de las variables</a></li>
+  <li><a href="#comprobación-de-los-tipos-de-datos" id="toc-comprobación-de-los-tipos-de-datos" class="nav-link" data-scroll-target="#comprobación-de-los-tipos-de-datos">Comprobación de los tipos de datos</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/JohnReyes02/Datacamp/edit/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/JohnReyes02/Datacamp/blob/main/Fundamentos_de_programacion_en_python\01_Introudccion_a_python_para_desarrolladores/01_Introduccion_a_python.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -273,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Pulsa el botón <strong>Ejecutar código</strong> para ejecutar el script de Python y ver los resultados en el área del shell de Python.</p></li>
 <li><p>Pulsa el botón <strong>Enviar respuesta</strong> para pasar al siguiente ejecticio.</p></li>
 </ul>
-<div id="1136c708" class="cell" data-execution_count="1">
+<div id="428815a8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'I Love Python'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>I Love Python</code></pre>
@@ -291,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Utiliza la función incorporada de Python <code>print()</code> para mostrar <code>"Learning Python"</code>.</li>
 </ul>
-<div id="3b0c8ef2" class="cell" data-execution_count="2">
+<div id="3fb9d0f6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace ____ below to display "Learning Python"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Learning Python'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -324,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Imprime la suma de <code>19 + 17</code>.</p></li>
 <li><p>Imprime el resultado de restar <code>12</code> a <code>99</code>.</p></li>
 </ul>
-<div id="b163ada4" class="cell" data-execution_count="3">
+<div id="26096fca" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add 19 and 17</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">19</span> <span class="op">+</span> <span class="dv">17</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -347,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Imprime el resultado de <code>9</code> multiplicado por <code>2</code>.</p></li>
 <li><p>Imprime el resultado de dividir <code>120</code> enre <code>12</code>.</p></li>
 </ul>
-<div id="f80afa21" class="cell" data-execution_count="4">
+<div id="4c2dbb8c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and print 9 multiplied by 2</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">9</span> <span class="op">*</span> <span class="dv">2</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -359,6 +365,144 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Hasta ahora has trabajado con números y aprendido lo básico de la multiplicación y la división.¡Vamos a descubrir otros números que no son enteros en el próximo video!</p>
+</section>
+</section>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<ul>
+<li><p>En Python los números enteros se clasifican como enteros.</p></li>
+<li><p>Los números decimales se clasifican como flotantes.</p></li>
+<li><p>Python no requiere que especifiquemos el tipo de datos de una variable.</p></li>
+<li><p>La función <code>type()</code> permite verificar qué tipo de datos es una variable.</p></li>
+</ul>
+<div id="3454d66d" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>customer_age <span class="op">=</span> <span class="dv">26</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">58.50</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Data Type</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(customer_age))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(account_balance))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>Un dato booleano solo puede tener dos valores posible:
+<ul>
+<li>Verdadero</li>
+<li>Falso</li>
+</ul></li>
+</ul>
+<div id="910df320" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>is_active_costumer <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(is_active_costumer))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'bool'&gt;</code></pre>
+</div>
+</div>
+<section id="trabajar-con-variables-numéricas" class="level3">
+<h3 class="anchored" data-anchor-id="trabajar-con-variables-numéricas">Trabajar con variables numéricas</h3>
+<p>Python te permite establecer variables como números enteros o números con decimales. En este ejercicio, probarás a utilizar distintos valores numéricos para las variables.</p>
+<section id="instrucciones-4" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-4">Instrucciones</h4>
+<ul>
+<li><p>Crea una variable llamada <code>account_balance</code> con el valor <code>120.50</code>.</p></li>
+<li><p>Imprime la variable <code>account_balance</code>.</p></li>
+</ul>
+<div id="7397f297" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age of a costumer</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>costumer_age <span class="op">=</span> <span class="dv">27</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create account_balance variable</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">120.5</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print account_balance</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(account_balance)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>120.5</code></pre>
+</div>
+</div>
+<p>En el próximo ejercicio, aprenderás sobre la reutilización de variables y también aprenderás más sobre tipos de datos.</p>
+</section>
+</section>
+<section id="actualizar-los-valores-de-las-variables" class="level3">
+<h3 class="anchored" data-anchor-id="actualizar-los-valores-de-las-variables">Actualizar los valores de las variables</h3>
+<p>Las variables pueden actualizarse para que posean nuevos valores en cualquier momento, para que puedas reutilizarlas eficazmente. Los valores booleanos solo pueden ser <code>True</code> o <code>False</code>, similar a <strong>Sí/No</strong>.</p>
+<p>¡Al cliente le ha tocado la lotería! Actualiza las variables <code>account_balance</code> e <code>is_millionaire</code> para que reflejen su nuevo estado.</p>
+<section id="instrucciones-5" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-5">Instrucciones</h4>
+<ul>
+<li><p>Actualiza el <code>account_balance</code> para que sea <code>1300000.00</code>.</p></li>
+<li><p>Actualiza la variable <code>is_millionaire</code> para que sea <code>True</code>.</p></li>
+<li><p>Imprime la variable <code>is_millionaire</code> para ver su valor booleano actualizado.</p></li>
+</ul>
+<div id="9cf85376" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">20000.00</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>is_millionaire <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Update acoount balance</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">1300000.00</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Update is_millionaire variable</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>is_millionaire <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(account_balance)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(is_millionaire)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1300000.0
+True</code></pre>
+</div>
+</div>
+<p>Ahora has aprendido a actualizar variables, trabajar con valores booleanos y has trabajado con algunos tipos de datos. En el siguiente paso, aprenderás a determinar internamente el tipo de datos de cada variable según lo establecido por Python.</p>
+</section>
+</section>
+<section id="comprobación-de-los-tipos-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="comprobación-de-los-tipos-de-datos">Comprobación de los tipos de datos</h3>
+<p>Python nos facilita la vida al inferir el tipo de dato de las variables con las que trabajas, evitando la necesidad de declarar el tipo de datos explícitamente.</p>
+<p>Practiquemos la comprobación del tipo de datos de distintos valores y variables. Tienes tres variables: <code>customer_age</code>, <code>account_balance</code> e <code>is_millionaire</code>, y aprenderás a obtener sus tipos de datos.</p>
+<section id="instrucciones-6" class="level4">
+<h4 class="anchored" data-anchor-id="instrucciones-6">Instrucciones</h4>
+<ol type="1">
+<li>Imprime el tipo de datos de la variable <code>costumer_age</code>.</li>
+</ol>
+<div id="6794502b" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>costumer_age <span class="op">=</span> <span class="dv">29</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data type of costumer_age</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(costumer_age))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Imprime el tipo de datos de la variable <code>account_balance</code>.</li>
+</ol>
+<div id="97683d2b" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>customer_age <span class="op">=</span> <span class="dv">49</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">120078.89</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data type of account_balance</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(account_balance))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'float'&gt;</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Imprime el tipo de datos de la variable <code>is_millionaire</code>.</li>
+</ol>
+<div id="e1c4dfbb" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>customer_age <span class="op">=</span> <span class="dv">49</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>account_balance <span class="op">=</span> <span class="fl">120078.89</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>is_millionaire <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data type of is_millionaire</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(is_millionaire))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'bool'&gt;</code></pre>
+</div>
+</div>
+<p>Aprenderemos a lo largo del curso que ciertas tareas son posibles dependiendo de los tipos de datos con los que estamos trabajando, como cálculos o filtrado condicional, por lo que conocer el tipo de datos con los que estamos trabajando es extremadamente importante.</p>
 
 
 </section>
